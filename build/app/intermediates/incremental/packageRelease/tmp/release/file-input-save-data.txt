@@ -1,21 +1,21 @@
 #Internal package file, do not edit.
-#Wed Feb 27 19:20:02 IST 2019
+#Wed Feb 27 21:05:43 IST 2019
 4.path=flutter_assets/assets/bg.jpg
 8.set=ASSET
-6.path=classes.dex
+6.path=flutter_assets/FontManifest.json
 0.baseType=DIRECTORY
-10.path=vm_snapshot_data
+10.path=flutter_assets/LICENSE
 5.baseType=DIRECTORY
 1.base=/home/ashutosh/Projects/Flutter Apps/Udhari/build/app/intermediates/merged_assets/release/mergeReleaseAssets/out
-8.path=vm_snapshot_instr
+8.path=isolate_snapshot_data
 3.base=/home/ashutosh/Projects/Flutter Apps/Udhari/build/app/intermediates/merged_assets/release/mergeReleaseAssets/out
 4.set=ASSET
-5.base=/home/ashutosh/Projects/Flutter Apps/Udhari/build/app/intermediates/transforms/mergeJniLibs/release/0
+5.base=/home/ashutosh/Projects/Flutter Apps/Udhari/build/app/intermediates/transforms/dexMerger/release/0
 7.base=/home/ashutosh/Projects/Flutter Apps/Udhari/build/app/intermediates/merged_assets/release/mergeReleaseAssets/out
-11.base=/home/ashutosh/Projects/Flutter Apps/Udhari/build/app/intermediates/merged_assets/release/mergeReleaseAssets/out
+11.base=/home/ashutosh/Projects/Flutter Apps/Udhari/build/app/intermediates/transforms/mergeJniLibs/release/0
 9.base=/home/ashutosh/Projects/Flutter Apps/Udhari/build/app/intermediates/merged_assets/release/mergeReleaseAssets/out
 1.baseType=DIRECTORY
-11.set=ASSET
+11.set=NATIVE_RESOURCE
 0.set=ASSET
 6.baseType=DIRECTORY
 7.set=ASSET
@@ -26,17 +26,17 @@
 7.baseType=DIRECTORY
 3.path=isolate_snapshot_instr
 10.set=ASSET
-5.path=lib/arm64-v8a/libflutter.so
+5.path=classes.dex
 0.base=/home/ashutosh/Projects/Flutter Apps/Udhari/build/app/intermediates/merged_assets/release/mergeReleaseAssets/out
-7.path=flutter_assets/FontManifest.json
-11.path=flutter_assets/LICENSE
-9.path=isolate_snapshot_data
-6.set=DEX
+7.path=vm_snapshot_instr
+11.path=lib/armeabi-v7a/libflutter.so
+9.path=vm_snapshot_data
+6.set=ASSET
 2.base=/home/ashutosh/Projects/Flutter Apps/Udhari/build/app/intermediates/merged_assets/release/mergeReleaseAssets/out
 11.baseType=DIRECTORY
 4.base=/home/ashutosh/Projects/Flutter Apps/Udhari/build/app/intermediates/merged_assets/release/mergeReleaseAssets/out
 3.baseType=DIRECTORY
-6.base=/home/ashutosh/Projects/Flutter Apps/Udhari/build/app/intermediates/transforms/dexMerger/release/0
+6.base=/home/ashutosh/Projects/Flutter Apps/Udhari/build/app/intermediates/merged_assets/release/mergeReleaseAssets/out
 10.base=/home/ashutosh/Projects/Flutter Apps/Udhari/build/app/intermediates/merged_assets/release/mergeReleaseAssets/out
 8.base=/home/ashutosh/Projects/Flutter Apps/Udhari/build/app/intermediates/merged_assets/release/mergeReleaseAssets/out
 2.set=ASSET
@@ -44,7 +44,7 @@
 9.set=ASSET
 count=12
 4.baseType=DIRECTORY
-5.set=NATIVE_RESOURCE
+5.set=DEX
 9.baseType=DIRECTORY
 0.path=flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
 1.set=ASSET
