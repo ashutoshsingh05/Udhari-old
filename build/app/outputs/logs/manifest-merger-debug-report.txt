@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:1:1-39:12
-INJECTED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:1:1-39:12
-INJECTED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:1:1-39:12
-INJECTED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:1:1-39:12
+ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:1:1-39:12
+INJECTED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:1:1-39:12
+INJECTED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:1:1-39:12
+INJECTED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:1:1-39:12
 MERGED from [com.google.firebase:firebase-core:16.0.1] /home/ashutosh/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.1.aar/93fa52a1df30bb1c20630eeecfbdbb9b/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] /home/ashutosh/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-impl-16.0.1.aar/7b0672d553413a175f0549216e68c9ab/AndroidManifest.xml:17:1-34:12
 MERGED from [com.google.firebase:firebase-analytics:16.0.1] /home/ashutosh/.gradle/caches/transforms-1/files-1.1/firebase-analytics-16.0.1.aar/e1fa5d46c6281cf41f8437c8db8f150c/AndroidManifest.xml:17:1-55:12
@@ -25,25 +25,25 @@ MERGED from [com.android.support:support-core-utils:26.1.0] /home/ashutosh/.grad
 MERGED from [com.android.support:support-core-ui:26.1.0] /home/ashutosh/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/27140680dcc02fc9c2520d336e40b2cc/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.1.0] /home/ashutosh/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/3fba503da262efe60f836875207dd5df/AndroidManifest.xml:17:1-31:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/ashutosh/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/94a46640b4a758eee8a2265282f05b42/AndroidManifest.xml:17:1-30:12
-INJECTED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:1:1-39:12
-INJECTED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:1:1-39:12
-INJECTED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:1:1-39:12
+INJECTED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:1:1-39:12
+INJECTED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:1:1-39:12
+INJECTED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:1:1-39:12
 	package
-		ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:2:5-33
-		INJECTED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:2:5-33
+		INJECTED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:1:1-39:12
-		INJECTED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:1:1-39:12
+		INJECTED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:1:1-39:12
-		INJECTED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:1:1-39:12
+		INJECTED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:1:11-69
+		ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:8:5-66
+ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:8:5-66
 MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] /home/ashutosh/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-impl-16.0.1.aar/7b0672d553413a175f0549216e68c9ab/AndroidManifest.xml:22:5-67
 MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] /home/ashutosh/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-impl-16.0.1.aar/7b0672d553413a175f0549216e68c9ab/AndroidManifest.xml:22:5-67
 MERGED from [com.google.firebase:firebase-analytics:16.0.1] /home/ashutosh/.gradle/caches/transforms-1/files-1.1/firebase-analytics-16.0.1.aar/e1fa5d46c6281cf41f8437c8db8f150c/AndroidManifest.xml:23:5-67
@@ -53,9 +53,9 @@ MERGED from [com.google.firebase:firebase-analytics-impl:16.1.1] /home/ashutosh/
 MERGED from [com.google.firebase:firebase-iid:16.0.0] /home/ashutosh/.gradle/caches/transforms-1/files-1.1/firebase-iid-16.0.0.aar/0c87125f25fd6204bc98edf8d7c5bcb1/AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-iid:16.0.0] /home/ashutosh/.gradle/caches/transforms-1/files-1.1/firebase-iid-16.0.0.aar/0c87125f25fd6204bc98edf8d7c5bcb1/AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:8:22-64
+		ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:8:22-64
 application
-ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:15:5-38:19
+ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:15:5-38:19
 MERGED from [com.google.firebase:firebase-core:16.0.1] /home/ashutosh/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.1.aar/93fa52a1df30bb1c20630eeecfbdbb9b/AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-core:16.0.1] /home/ashutosh/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.1.aar/93fa52a1df30bb1c20630eeecfbdbb9b/AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] /home/ashutosh/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-impl-16.0.1.aar/7b0672d553413a175f0549216e68c9ab/AndroidManifest.xml:26:5-32:19
@@ -99,45 +99,45 @@ MERGED from [com.android.support:support-compat:26.1.0] /home/ashutosh/.gradle/c
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/ashutosh/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/94a46640b4a758eee8a2265282f05b42/AndroidManifest.xml:24:5-28:19
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/ashutosh/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/94a46640b4a758eee8a2265282f05b42/AndroidManifest.xml:24:5-28:19
 	android:label
-		ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:17:9-31
+		ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:17:9-31
 	android:icon
-		ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:18:9-43
+		ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:18:9-43
 	android:name
-		ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:16:9-57
+		ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:16:9-57
 activity#com.example.udhari.MainActivity
-ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:19:9-37:20
+ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:19:9-37:20
 	android:launchMode
-		ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:21:13-43
+		ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:21:13-43
 	android:hardwareAccelerated
-		ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:24:13-47
+		ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:24:13-47
 	android:windowSoftInputMode
-		ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:25:13-55
+		ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:25:13-55
 	android:configChanges
-		ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:23:13-137
+		ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:23:13-137
 	android:theme
-		ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:22:13-47
+		ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:22:13-47
 	android:name
-		ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:20:13-41
+		ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:20:13-41
 meta-data#io.flutter.app.android.SplashScreenUntilFirstFrame
-ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:30:13-32:40
+ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:30:13-32:40
 	android:value
-		ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:32:17-37
+		ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:32:17-37
 	android:name
-		ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:31:17-82
+		ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:31:17-82
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:33:13-36:29
+ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:33:13-36:29
 action#android.intent.action.MAIN
-ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:34:17-68
+ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:34:17-68
 	android:name
-		ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:34:25-66
+		ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:34:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:35:17-76
+ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:35:17-76
 	android:name
-		ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml:35:27-74
+		ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml:35:27-74
 uses-sdk
-INJECTED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml
-INJECTED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml
 MERGED from [com.google.firebase:firebase-core:16.0.1] /home/ashutosh/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.1.aar/93fa52a1df30bb1c20630eeecfbdbb9b/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-core:16.0.1] /home/ashutosh/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.1.aar/93fa52a1df30bb1c20630eeecfbdbb9b/AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] /home/ashutosh/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-impl-16.0.1.aar/7b0672d553413a175f0549216e68c9ab/AndroidManifest.xml:20:5-44
@@ -180,18 +180,18 @@ MERGED from [com.android.support:support-compat:26.1.0] /home/ashutosh/.gradle/c
 MERGED from [com.android.support:support-compat:26.1.0] /home/ashutosh/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/3fba503da262efe60f836875207dd5df/AndroidManifest.xml:21:5-23:58
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/ashutosh/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/94a46640b4a758eee8a2265282f05b42/AndroidManifest.xml:20:5-22:41
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/ashutosh/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/94a46640b4a758eee8a2265282f05b42/AndroidManifest.xml:20:5-22:41
-INJECTED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml
-INJECTED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml
+INJECTED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml
 	tools:overrideLibrary
 		ADDED from [com.android.support:support-v4:26.1.0] /home/ashutosh/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/d924c3e8d4f2a4ba2013e0b3a30912e8/AndroidManifest.xml:23:9-51
 	android:targetSdkVersion
-		INJECTED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/AndroidManifest.xml
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] /home/ashutosh/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-impl-16.0.1.aar/7b0672d553413a175f0549216e68c9ab/AndroidManifest.xml:23:5-79
 MERGED from [com.google.firebase:firebase-analytics:16.0.1] /home/ashutosh/.gradle/caches/transforms-1/files-1.1/firebase-analytics-16.0.1.aar/e1fa5d46c6281cf41f8437c8db8f150c/AndroidManifest.xml:24:5-79

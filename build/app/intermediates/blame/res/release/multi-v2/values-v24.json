@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/ashutosh/Projects/Flutter Apps/udhari/build/app/intermediates/incremental/mergeReleaseResources/merged.dir/values-v24/values-v24.xml",
+            "outputFile": "/home/ashutosh/Projects/Flutter Apps/Udhari/build/app/intermediates/incremental/mergeReleaseResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
                     "source": "/home/ashutosh/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/b792524b35a96547152621efc06eb5c9/res/values-v24/values-v24.xml",

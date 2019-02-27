@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/ashutosh/Projects/Flutter Apps/udhari/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/home/ashutosh/Projects/Flutter Apps/Udhari/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
                     "source": "/home/ashutosh/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/049a22b48e819bba21d27b4d3f1e482d/res/values/values.xml",
@@ -42,24 +42,7 @@
                     }
                 },
                 {
-                    "source": "/home/ashutosh/Projects/Flutter Apps/udhari/build/app/generated/res/google-services/debug/values/values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,199,309,391,495,598,718,817",
-                        "endColumns": "143,109,81,103,102,119,98,75",
-                        "endOffsets": "194,304,386,490,593,713,812,888"
-                    },
-                    "to": {
-                        "startLines": "110,111,112,113,114,115,116,117",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "7011,7155,7265,7347,7451,7554,7674,7773",
-                        "endColumns": "143,109,81,103,102,119,98,75",
-                        "endOffsets": "7150,7260,7342,7446,7549,7669,7768,7844"
-                    }
-                },
-                {
-                    "source": "/home/ashutosh/Projects/Flutter Apps/udhari/android/app/src/main/res/values/styles.xml",
+                    "source": "/home/ashutosh/Projects/Flutter Apps/Udhari/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -92,6 +75,23 @@
                         "startOffsets": "4540,5718",
                         "endColumns": "67,166",
                         "endOffsets": "4603,5880"
+                    }
+                },
+                {
+                    "source": "/home/ashutosh/Projects/Flutter Apps/Udhari/build/app/generated/res/google-services/debug/values/values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,199,309,391,495,598,718,817",
+                        "endColumns": "143,109,81,103,102,119,98,75",
+                        "endOffsets": "194,304,386,490,593,713,812,888"
+                    },
+                    "to": {
+                        "startLines": "110,111,112,113,114,115,116,117",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "7011,7155,7265,7347,7451,7554,7674,7773",
+                        "endColumns": "143,109,81,103,102,119,98,75",
+                        "endOffsets": "7150,7260,7342,7446,7549,7669,7768,7844"
                     }
                 },
                 {

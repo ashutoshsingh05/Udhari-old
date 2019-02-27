@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/ashutosh/Projects/Flutter Apps/udhari/build/app/intermediates/incremental/mergeReleaseResources/merged.dir/values-ru/values-ru.xml",
+            "outputFile": "/home/ashutosh/Projects/Flutter Apps/Udhari/build/app/intermediates/incremental/mergeReleaseResources/merged.dir/values-ru/values-ru.xml",
             "map": [
                 {
                     "source": "/home/ashutosh/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/2565e0089e0af5bd82090f9cc58e2b5c/res/values-ru/values.xml",

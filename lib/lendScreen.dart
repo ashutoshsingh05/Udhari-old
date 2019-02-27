@@ -14,9 +14,11 @@ class _LendState extends State<Lend> {
         children: <Widget>[
           Icon(Icons.build),
           Padding(
-            padding: EdgeInsets.only(right: 20, left: 20,top: 30),
+            padding: EdgeInsets.only(right: 20, left: 20, top: 30),
             child: Text(
-                "Sorry, we are currently building this part of the app\n\nStay Tuned..."),
+              "Sorry, we are currently building this part of the app\n\nStay Tuned...",
+              textAlign: TextAlign.center,
+            ),
           ),
         ],
       ),

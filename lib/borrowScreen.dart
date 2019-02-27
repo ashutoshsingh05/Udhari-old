@@ -6,8 +6,8 @@ class Borrow extends StatefulWidget {
 }
 
 class _BorrowState extends State<Borrow> {
-
-  Widget _borrowCardsBuilder(String receipent, String borrowContext, int amount) {
+  Widget _borrowCardsBuilder(
+      String receipent, String borrowContext, int amount) {
     return new Card(
       child: new Column(
         mainAxisSize: MainAxisSize.min,
@@ -48,11 +48,12 @@ class _BorrowState extends State<Borrow> {
             Padding(
               padding: EdgeInsets.only(top: 10),
             ),
-            _borrowCardsBuilder('Tanmay Ambadkar','Medical Store',100),
+            _borrowCardsBuilder('Tanmay Ambadkar', 'Medical Store', 100),
             _borrowCardsBuilder('Ekansh', 'DAAICT', 100),
             _borrowCardsBuilder('Yash Shaw', 'Sponsorship, Sandwich', 54),
-            _borrowCardsBuilder("Harsh Kakani", 'Sponsorship, SandWich', 64),
+            _borrowCardsBuilder("Harsh Kakani", 'Sponsorship, SandWich', 34),
             _borrowCardsBuilder("Somebody", "Anything", 100000),
+            _borrowCardsBuilder("Nobody", "Something", 100)
           ],
         ),
       ),
