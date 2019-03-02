@@ -3,6 +3,8 @@ import 'package:udhari/borrowScreen.dart';
 import 'lendScreen.dart';
 import 'login.dart';
 import 'fancy_fab.dart';
+import 'get_deviceID.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 void main() => runApp(TabBarClass());
 
@@ -63,13 +65,16 @@ class _HomePageState extends State<HomePage>
           ],
         ),
       ),
-      body: TabBarView(
-        controller: _tabController,
-        children: <Widget>[
-          Borrow(),
-          Lend(),
-        ],
+      body: Center(
+        child: DeviceID(),
       ),
+      // body: TabBarView(
+      //   controller: _tabController,
+      //   children: <Widget>[
+      //     Borrow(),
+      //     Lend(),
+      //   ],
+      // ),
       floatingActionButton: FancyFab(),
       // floatingActionButton: FloatingActionButton(
       //   onPressed: () {},
