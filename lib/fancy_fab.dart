@@ -33,25 +33,29 @@ class _FancyFabState extends State<FancyFab>
     _buttonColor = ColorTween(
       begin: Colors.blue,
       end: Colors.red,
-    ).animate(CurvedAnimation(
-      parent: _animationController,
-      curve: Interval(
-        0.00,
-        1.00,
-        curve: Curves.linear,
+    ).animate(
+      CurvedAnimation(
+        parent: _animationController,
+        curve: Interval(
+          0.00,
+          1.00,
+          curve: Curves.linear,
+        ),
       ),
-    ));
+    );
     _translateButton = Tween<double>(
       begin: _fabHeight,
       end: -14.0,
-    ).animate(CurvedAnimation(
-      parent: _animationController,
-      curve: Interval(
-        0.0,
-        0.75,
-        curve: _curve,
+    ).animate(
+      CurvedAnimation(
+        parent: _animationController,
+        curve: Interval(
+          0.0,
+          0.75,
+          curve: _curve,
+        ),
       ),
-    ));
+    );
     super.initState();
   }
 
@@ -73,7 +77,7 @@ class _FancyFabState extends State<FancyFab>
   Widget individual() {
     return Container(
       child: FloatingActionButton(
-        onPressed: (){},
+        onPressed: () {},
         tooltip: 'Individual Udhari',
         child: Icon(Icons.person_add),
       ),
@@ -113,7 +117,7 @@ class _FancyFabState extends State<FancyFab>
         Transform(
           transform: Matrix4.translationValues(
             0.0,
-            _translateButton.value*4,
+            _translateButton.value * 4,
             10.0,
           ),
           child: individual(),
