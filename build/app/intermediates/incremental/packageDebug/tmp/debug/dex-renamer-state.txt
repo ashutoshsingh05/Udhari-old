@@ -1,0 +1,4 @@
+#Wed Feb 27 21:45:53 IST 2019
+base.0=/home/ashutosh/Projects/Flutter Apps/Udhari/build/app/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex
