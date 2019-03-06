@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:udhari/borrowScreen.dart';
 import 'lendScreen.dart';
-import 'login.dart';
-import 'fancy_fab.dart';
 import 'get_deviceID.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'fancy_fab.dart';
 
 void main() => runApp(TabBarClass());
 
@@ -76,11 +74,6 @@ class _HomePageState extends State<HomePage>
       //   ],
       // ),
       floatingActionButton: FancyFab(),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {},
-      //   tooltip: 'Add new Record',
-      //   child: Icon(Icons.add),
-      // ),
     );
   }
 }

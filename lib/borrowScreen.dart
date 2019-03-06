@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Borrow extends StatefulWidget {
   @override
@@ -6,6 +7,10 @@ class Borrow extends StatefulWidget {
 }
 
 class _BorrowState extends State<Borrow> {
+  var myDatabase = Firestore.instance
+      .collection('912bb235e52b3196')
+      .document('individual_borrow');
+
   Widget _borrowCardsBuilder(
       String receipent, String borrowContext, int amount, String dateBorrowed) {
     return new Card(
@@ -19,7 +24,7 @@ class _BorrowState extends State<Borrow> {
             ),
             title: Text("$receipent"),
             subtitle: Container(
-              child:Column(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -42,7 +47,7 @@ class _BorrowState extends State<Borrow> {
                 ),
                 FlatButton(
                   child: const Text('Mark as paid'),
-                  onPressed: () {/* ... */},
+                  onPressed: () {},
                 ),
               ],
             ),
@@ -61,13 +66,22 @@ class _BorrowState extends State<Borrow> {
             Padding(
               padding: EdgeInsets.only(top: 10),
             ),
-            _borrowCardsBuilder('Tanmay Ambadkar', 'Medical Store', 100,"10 Jan"),
-            _borrowCardsBuilder('Ekansh', 'DAAICT', 100,"10 Jan"),
-            _borrowCardsBuilder('Yash Shaw', 'Sponsorship, Sandwich', 54,"10 Jan"),
-            _borrowCardsBuilder("Harsh Kakani", "Sponsorship, SandWich", 34,"10 Jan"),
-            _borrowCardsBuilder("Somebody", "Anything", 100000,"10 Jan"),
-            _borrowCardsBuilder("Nobody", "Something", 100,"10 Jan"),
-            _borrowCardsBuilder("Dhyey", "Yash Shaw Birthday Cake", -35,"27 Feb"),
+            StreamBuilder(
+                stream: myDatabase
+                    .collection('912bb235e52b3196')
+                    .document('individual_borrow')
+                    .snapshots(),
+                builder: (BuildContext context, AsyncSnapshot snapshot) {
+                  return _borrowCardsBuilder(snapshot.data.get['receipent'],
+                      'Medical Store', 100, "10 Jan");
+                }),
+            // _borrowCardsBuilder('Tanmay Ambadkar', 'Medical Store', 100,"10 Jan"),
+            // _borrowCardsBuilder('Ekansh', 'DAAICT', 100,"10 Jan"),
+            // _borrowCardsBuilder('Yash Shaw', 'Sponsorship, Sandwich', 54,"10 Jan"),
+            // _borrowCardsBuilder("Harsh Kakani", "Sponsorship, SandWich", 34,"10 Jan"),
+            // _borrowCardsBuilder("Somebody", "Anything", 100000,"10 Jan"),
+            // _borrowCardsBuilder("Nobody", "Something", 100,"10 Jan"),
+            // _borrowCardsBuilder("Dhyey", "Yash Shaw Birthday Cake", -35,"27 Feb"),
           ],
         ),
       ),

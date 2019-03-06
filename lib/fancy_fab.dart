@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'data_input.dart';
 
 class FancyFab extends StatefulWidget {
   final Function() onPressed;
@@ -77,7 +78,9 @@ class _FancyFabState extends State<FancyFab>
   Widget individual() {
     return Container(
       child: FloatingActionButton(
-        onPressed: () {},
+        onPressed: (){
+          InputData();
+        },
         tooltip: 'Individual Udhari',
         child: Icon(Icons.person_add),
       ),

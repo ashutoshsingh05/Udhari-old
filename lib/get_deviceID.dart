@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:device_id/device_id.dart';
 
+void main() => runApp(new DeviceID());
+
 class DeviceID extends StatefulWidget {
   @override
   _DeviceIDState createState() => new _DeviceIDState();
@@ -30,6 +32,6 @@ class _DeviceIDState extends State<DeviceID> {
 
   @override
   Widget build(BuildContext context) {
-    return Text('$_deviceid');
+    return Text('Your device id: $_deviceid');
   }
 }
