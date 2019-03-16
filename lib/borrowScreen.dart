@@ -72,7 +72,9 @@ class _BorrowState extends State<Borrow> {
                     .document('individual_borrow')
                     .snapshots(),
                 builder: (BuildContext context, AsyncSnapshot snapshot) {
-                  return _borrowCardsBuilder(snapshot.data.get['receipent'],
+                  if (snapshot.hasData) return CircularProgressIndicator();
+
+                  return _borrowCardsBuilder(snapshot.data.document['receipent'],
                       'Medical Store', 100, "10 Jan");
                 }),
             // _borrowCardsBuilder('Tanmay Ambadkar', 'Medical Store', 100,"10 Jan"),

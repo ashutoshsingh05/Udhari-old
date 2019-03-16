@@ -14,6 +14,46 @@ class FancyFab extends StatefulWidget {
 
 class _FancyFabState extends State<FancyFab>
     with SingleTickerProviderStateMixin {
+  void _individualUdhari() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (BuildContext context) {
+            return InputData();
+          },
+          fullscreenDialog: true),
+    );
+  }
+  // Future<void> _individualUdhari() async {
+  //   return showDialog(
+  //     context: context,
+  //     barrierDismissible: false,
+  //     builder: (BuildContext context) {
+  //       return AlertDialog(
+  //         title: Text('Rewind and remember'),
+  //         content: SingleChildScrollView(
+  //           child: ListBody(
+  //             children: <Widget>[
+  //               Text(
+  //                   'You will never be satisfied. This call to setState tells the Flutter framework that something has changed in this State, which causes it to rerun the build method below so that the display can reflect the updated values. If we changed counter without calling setState(), then the build method would not be called again, and so nothing would appear to happen.'),
+  //               Text(
+  //                   'You\’re like me. I’m never satisfied. You will never be satisfied. This call to setState tells the Flutter framework that something has changed in this State, which causes it to rerun the build method below so that the display can reflect the updated values. If we changed counter without calling setState(), then the build method would not be called again, and so nothing would appear to happen'),
+  //             ],
+  //           ),
+  //         ),
+  //         actions: <Widget>[
+  //           FlatButton(
+  //             child: Text('Regret'),
+  //             onPressed: () {
+  //               Navigator.of(context).pop();
+  //             },
+  //           ),
+  //         ],
+  //       );
+  //     },
+  //   );
+  // }
+
   bool isOpened = false;
   AnimationController _animationController;
   Animation<Color> _buttonColor;
@@ -78,9 +118,7 @@ class _FancyFabState extends State<FancyFab>
   Widget individual() {
     return Container(
       child: FloatingActionButton(
-        onPressed: (){
-          InputData();
-        },
+        onPressed: _individualUdhari,
         tooltip: 'Individual Udhari',
         child: Icon(Icons.person_add),
       ),
@@ -90,7 +128,7 @@ class _FancyFabState extends State<FancyFab>
   Widget group() {
     return Container(
       child: FloatingActionButton(
-        onPressed: () {},
+        onPressed: _individualUdhari,
         tooltip: 'Group Udhari',
         child: Icon(Icons.group_add),
       ),

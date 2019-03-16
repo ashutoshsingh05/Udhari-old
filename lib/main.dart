@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:udhari/borrowScreen.dart';
 import 'lendScreen.dart';
 import 'get_deviceID.dart';
-import 'fancy_fab.dart';
+import 'data_input.dart';
 
 void main() => runApp(TabBarClass());
 
@@ -28,6 +28,19 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
+  DeviceIDState newDevice = new DeviceIDState();
+
+  void _showDataScreen() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (BuildContext context) {
+          return InputData();
+        },
+        fullscreenDialog: true,
+      ),
+    );
+  }
 
   @override
   void initState() {
@@ -47,7 +60,7 @@ class _HomePageState extends State<HomePage>
           IconButton(
             onPressed: () {},
             icon: Icon(Icons.more_vert),
-          )
+          ),
         ],
         leading: Icon(Icons.face),
         title: Text("Udhari"),
@@ -64,7 +77,14 @@ class _HomePageState extends State<HomePage>
         ),
       ),
       body: Center(
-        child: DeviceID(),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text("Device ID before build: " + newDevice.getDeviceID()),
+            DeviceID(),
+            Text("Device ID after build: " + newDevice.getDeviceID()),
+          ],
+        ),
       ),
       // body: TabBarView(
       //   controller: _tabController,
@@ -73,7 +93,12 @@ class _HomePageState extends State<HomePage>
       //     Lend(),
       //   ],
       // ),
-      floatingActionButton: FancyFab(),
+      //floatingActionButton: FancyFab(),
+      floatingActionButton: FloatingActionButton(
+        tooltip: 'Add udhari',
+        child: Icon(Icons.add),
+        onPressed: _showDataScreen,
+      ),
     );
   }
 }
