@@ -76,23 +76,23 @@ class _HomePageState extends State<HomePage>
           ],
         ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text("Device ID before build: " + newDevice.getDeviceID()),
-            DeviceID(),
-            Text("Device ID after build: " + newDevice.getDeviceID()),
-          ],
-        ),
-      ),
-      // body: TabBarView(
-      //   controller: _tabController,
-      //   children: <Widget>[
-      //     Borrow(),
-      //     Lend(),
-      //   ],
+      // body: Center(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: <Widget>[
+      //       Text("Device ID before build: " + newDevice.getDeviceID()),
+      //       DeviceID(),
+      //       Text("Device ID after build: " + newDevice.getDeviceID()),
+      //     ],
+      //   ),
       // ),
+      body: TabBarView(
+        controller: _tabController,
+        children: <Widget>[
+          Borrow(),
+          Lend(),
+        ],
+      ),
       //floatingActionButton: FancyFab(),
       floatingActionButton: FloatingActionButton(
         tooltip: 'Add udhari',

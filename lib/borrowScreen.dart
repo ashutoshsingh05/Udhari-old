@@ -9,7 +9,8 @@ class Borrow extends StatefulWidget {
 class _BorrowState extends State<Borrow> {
   var myDatabase = Firestore.instance
       .collection('912bb235e52b3196')
-      .document('individual_borrow');
+      .document('borrow')
+      .collection('Gupta');
 
   Widget _borrowCardsBuilder(
       String receipent, String borrowContext, int amount, String dateBorrowed) {
@@ -59,34 +60,62 @@ class _BorrowState extends State<Borrow> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.only(top: 10),
-            ),
-            StreamBuilder(
-              stream: myDatabase
-                  // .collection('912bb235e52b3196')
-                  // .document('individual_borrow')
-                  .snapshots(),
-              builder: (BuildContext context, AsyncSnapshot snapshot) {
-                if (snapshot.hasData) return CircularProgressIndicator();
-                return _borrowCardsBuilder(snapshot.data.document['receipent'],
-                    'Medical Store', 100, "10 Jan");
-              },
-            ),
-            // _borrowCardsBuilder('Tanmay Ambadkar', 'Medical Store', 100,"10 Jan"),
-            // _borrowCardsBuilder('Ekansh', 'DAAICT', 100,"10 Jan"),
-            // _borrowCardsBuilder('Yash Shaw', 'Sponsorship, Sandwich', 54,"10 Jan"),
-            // _borrowCardsBuilder("Harsh Kakani", "Sponsorship, SandWich", 34,"10 Jan"),
-            // _borrowCardsBuilder("Somebody", "Anything", 100000,"10 Jan"),
-            // _borrowCardsBuilder("Nobody", "Something", 100,"10 Jan"),
-            // _borrowCardsBuilder("Dhyey", "Yash Shaw Birthday Cake", -35,"27 Feb"),
-          ],
-        ),
+    return Center(
+      child: ListView.builder(
+        itemCount: 10,
+        itemBuilder: (BuildContext context, int index) {
+          return _borrowCardsBuilder("name", "context", 50, "date");
+        },
       ),
     );
+
+    // return Center(
+    //   child: SingleChildScrollView(
+    //     child: Column(
+    //       children: <Widget>[
+    //         _borrowCardsBuilder('Tanmay ', 'Medical Store', 100, "10 Jan"),
+    //         _borrowCardsBuilder('Ekansh', 'DAAICT', 100, "10 Jan"),
+    //         _borrowCardsBuilder('Yash Shaw', 'Sandwich', 54, "10 Jan"),
+    //         _borrowCardsBuilder("Harsh Kakani", "Sponsorship", 34, "10 Jan"),
+    //         _borrowCardsBuilder("Somebody", "Anything", 100000, "10 Jan"),
+    //         _borrowCardsBuilder("Nobody", "Something", 100, "10 Jan"),
+    //         _borrowCardsBuilder("Dhyey", "Yash Birthday", -35, "27 Feb"),
+    //       ],
+    //     ),
+    //   ),
+    // );
   }
+
+  // @override
+  // Widget build(BuildContext context) {
+  //   return Container(
+  //     child: SingleChildScrollView(
+  //       child: Column(
+  //         children: <Widget>[
+  //           Padding(
+  //             padding: EdgeInsets.only(top: 10),
+  //           ),
+  //           StreamBuilder(
+  //             stream: myDatabase
+  //                 // .collection('912bb235e52b3196')
+  //                 // .document('individual_borrow')
+  //                 .snapshots(),
+  //             builder: (BuildContext context, AsyncSnapshot snapshot) {
+  //               if (snapshot.hasData) return CircularProgressIndicator();
+  //               return _borrowCardsBuilder(snapshot.data.document['Name'],
+  //                   'Medical Store', 100, "10 Jan");
+  //             },
+  //           ),
+  //           // _borrowCardsBuilder('Tanmay Ambadkar', 'Medical Store', 100,"10 Jan"),
+  //           // _borrowCardsBuilder('Ekansh', 'DAAICT', 100,"10 Jan"),
+  //           // _borrowCardsBuilder('Yash Shaw', 'Sponsorship, Sandwich', 54,"10 Jan"),
+  //           // _borrowCardsBuilder("Harsh Kakani", "Sponsorship, SandWich", 34,"10 Jan"),
+  //           // _borrowCardsBuilder("Somebody", "Anything", 100000,"10 Jan"),
+  //           // _borrowCardsBuilder("Nobody", "Something", 100,"10 Jan"),
+  //           // _borrowCardsBuilder("Dhyey", "Yash Shaw Birthday Cake", -35,"27 Feb"),
+  //         ],
+  //       ),
+  //     ),
+  //   );
+  //}
 }
