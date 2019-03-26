@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:udhari/borrowScreen.dart';
-import 'lendScreen.dart';
-import 'login.dart';
-import 'fancy_fab.dart';
+import 'package:udhari/lendScreen.dart';
 import 'get_deviceID.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'data_input.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() => runApp(TabBarClass());
 
@@ -30,6 +29,19 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
+  DeviceIDState newDevice = new DeviceIDState();
+
+  void _showDataScreen() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (BuildContext context) {
+          return InputData();
+        },
+        fullscreenDialog: true,
+      ),
+    );
+  }
 
   @override
   void initState() {
@@ -43,13 +55,31 @@ class _HomePageState extends State<HomePage>
       appBar: AppBar(
         actions: <Widget>[
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Fluttertoast.showToast(
+                msg: "Sorry! This feature is in development right now 😅",
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.BOTTOM,
+                timeInSecForIos: 1,
+                backgroundColor: Colors.black12,
+                textColor: Colors.black87,
+                fontSize: 16.0);
+            },
             icon: Icon(Icons.search),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Fluttertoast.showToast(
+                msg: "Sorry! This feature is in development right now 😅",
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.BOTTOM,
+                timeInSecForIos: 1,
+                backgroundColor: Colors.black12,
+                textColor: Colors.black87,
+                fontSize: 16.0);
+            },
             icon: Icon(Icons.more_vert),
-          )
+          ),
         ],
         leading: Icon(Icons.face),
         title: Text("Udhari"),
@@ -65,22 +95,28 @@ class _HomePageState extends State<HomePage>
           ],
         ),
       ),
-      body: Center(
-        child: DeviceID(),
+      // body: Center(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: <Widget>[
+      //       Text("Device ID before build: " + newDevice.getDeviceID()),
+      //       DeviceID(),
+      //       Text("Device ID after build: " + newDevice.getDeviceID()),
+      //     ],
+      //   ),
+      // ),
+      body: TabBarView(
+        controller: _tabController,
+        children: <Widget>[
+          Borrow(),
+          Lend(),
+        ],
       ),
-      // body: TabBarView(
-      //   controller: _tabController,
-      //   children: <Widget>[
-      //     Borrow(),
-      //     Lend(),
-      //   ],
-      // ),
-      floatingActionButton: FancyFab(),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {},
-      //   tooltip: 'Add new Record',
-      //   child: Icon(Icons.add),
-      // ),
+      floatingActionButton: FloatingActionButton(
+        tooltip: 'Add udhari',
+        child: Icon(Icons.add),
+        onPressed: _showDataScreen,
+      ),
     );
   }
 }
