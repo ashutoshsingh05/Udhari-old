@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Udhari.dart';
+import 'package:intl/intl.dart';
 
 class InputData extends StatefulWidget {
   @override
@@ -149,8 +150,10 @@ class _InputDataState extends State<InputData> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.done),
         onPressed: () {
-          udhariData.date = DateTime.now().toLocal().toString();
-          udhariData.pushToFirebase();
+          udhariData.date = DateFormat('MMMM, d y kk:mm')
+              .format(DateTime.now().toLocal())
+              .toString();
+          udhariData.pushToFirebase(_radioButtonVal);
           Navigator.pop(context);
         },
         tooltip: 'Done',
