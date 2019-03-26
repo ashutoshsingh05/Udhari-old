@@ -3,6 +3,7 @@ import 'package:udhari/borrowScreen.dart';
 import 'package:udhari/lendScreen.dart';
 import 'get_deviceID.dart';
 import 'data_input.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() => runApp(TabBarClass());
 
@@ -54,11 +55,29 @@ class _HomePageState extends State<HomePage>
       appBar: AppBar(
         actions: <Widget>[
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Fluttertoast.showToast(
+                msg: "Sorry! This feature is in development right now 😅",
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.BOTTOM,
+                timeInSecForIos: 1,
+                backgroundColor: Colors.black12,
+                textColor: Colors.black87,
+                fontSize: 16.0);
+            },
             icon: Icon(Icons.search),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Fluttertoast.showToast(
+                msg: "Sorry! This feature is in development right now 😅",
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.BOTTOM,
+                timeInSecForIos: 1,
+                backgroundColor: Colors.black12,
+                textColor: Colors.black87,
+                fontSize: 16.0);
+            },
             icon: Icon(Icons.more_vert),
           ),
         ],

@@ -7,6 +7,7 @@
 #import <connectivity/ConnectivityPlugin.h>
 #import <device_id/DeviceIdPlugin.h>
 #import <firebase_core/FirebaseCorePlugin.h>
+#import <fluttertoast/FluttertoastPlugin.h>
 
 @implementation GeneratedPluginRegistrant
 
@@ -15,6 +16,7 @@
   [FLTConnectivityPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTConnectivityPlugin"]];
   [DeviceIdPlugin registerWithRegistrar:[registry registrarForPlugin:@"DeviceIdPlugin"]];
   [FLTFirebaseCorePlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseCorePlugin"]];
+  [FluttertoastPlugin registerWithRegistrar:[registry registrarForPlugin:@"FluttertoastPlugin"]];
 }
 
 @end

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Lend extends StatefulWidget {
   @override
@@ -50,7 +51,16 @@ class _LendState extends State<Lend> {
               children: <Widget>[
                 FlatButton(
                   child: const Text("Edit"),
-                  onPressed: () {},
+                  onPressed: () {
+                    Fluttertoast.showToast(
+                msg: "Sorry! This feature is in development right now 😅",
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.BOTTOM,
+                timeInSecForIos: 1,
+                backgroundColor: Colors.black12,
+                textColor: Colors.black87,
+                fontSize: 16.0);
+                  },
                 ),
                 FlatButton(
                   child: const Text('Mark as paid'),
