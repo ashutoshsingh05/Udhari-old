@@ -31,26 +31,35 @@ class UdhariClass {
   }
 
   set amount(String newAmount) {
-    this._amount = int.parse(newAmount);
+    this._amount = ((int.parse(newAmount)) ?? 0);
   }
 
   set context(String newContext) {
-    this._context = newContext;
+    this._context = newContext ?? "No Context!";
   }
 
   set name(String newName) {
-    this._name = newName;
+    this._name = newName ?? "An Alien";
   }
 
   set date(String newDate) {
     this._date = newDate;
   }
 
-  void pushToFirebase() {
+  void pushToFirebase(int _radioButtonVal) {
+    var docContext;
+    if (_radioButtonVal == 1) {
+      docContext = "borrow";
+    } else if (_radioButtonVal == 2) {
+      docContext = "lend";
+    } else {
+      docContext = "Erraneous radioButtonVal";
+      print("Erraneous radioButtonVal!\n Val : $_radioButtonVal");
+    }
     myDatabase
         .collection('Users')
         .document('912bb235e52b3196')
-        .collection('borrow')
+        .collection(docContext)
         .document('${this._name}')
         .setData({
       'Name': this._name,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:udhari/borrowScreen.dart';
-import 'lendScreen.dart';
+import 'package:udhari/lendScreen.dart';
 import 'get_deviceID.dart';
 import 'data_input.dart';
 
@@ -93,7 +93,6 @@ class _HomePageState extends State<HomePage>
           Lend(),
         ],
       ),
-      //floatingActionButton: FancyFab(),
       floatingActionButton: FloatingActionButton(
         tooltip: 'Add udhari',
         child: Icon(Icons.add),
