@@ -7,10 +7,9 @@ class Borrow extends StatefulWidget {
 }
 
 class _BorrowState extends State<Borrow> {
-  var myDatabase = Firestore.instance
-      .collection('912bb235e52b3196')
-      .document('borrow')
-      .collection('Gupta');
+  var myDatabase = Firestore.instance.collection('Users').
+      document('912bb235e52b3196')
+      .collection('borrow');
 
   Widget _borrowCardsBuilder(
       String receipent, String borrowContext, int amount, String dateBorrowed) {
@@ -60,13 +59,33 @@ class _BorrowState extends State<Borrow> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: ListView.builder(
-        itemCount: 10,
-        itemBuilder: (BuildContext context, int index) {
-          return _borrowCardsBuilder("name", "context", 50, "date");
-        },
-      ),
+    return StreamBuilder<QuerySnapshot>(
+      stream: myDatabase.snapshots(),
+      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+        if (snapshot.hasError) return new Text('${snapshot.error}');
+        switch (snapshot.connectionState) {
+          case ConnectionState.none:
+          case ConnectionState.waiting:
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          case ConnectionState.active:
+          case ConnectionState.done:
+            if (snapshot.hasError)
+              return Center(child: Text('Error: ${snapshot.error}'));
+            if (!snapshot.hasData) return Text('No data found!');
+            return Container(
+              // margin: EdgeInsets.all(20),
+              child: SingleChildScrollView(
+                child: Column(
+                    children: snapshot.data.documents
+                        .map((DocumentSnapshot document) {
+                  return _borrowCardsBuilder("${document['Name']}", "${document['Context']}", document['Amount'],"DATE");
+                }).toList()),
+              ),
+            );
+        }
+      },
     );
 
     // return Center(

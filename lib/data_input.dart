@@ -78,9 +78,11 @@ class _InputDataState extends State<InputData> {
                   keyboardType: TextInputType.numberWithOptions(),
                   textInputAction: TextInputAction.next,
                   onChanged: (newAmount) {
-                    FocusScope.of(context).requestFocus(nameField);
                     udhariData.amount = newAmount;
                     print("Amount: $newAmount");
+                  },
+                  onSubmitted: (_) {
+                    FocusScope.of(context).requestFocus(nameField);
                   },
                   decoration: InputDecoration(
                     prefixText: '₹ ',
@@ -102,9 +104,11 @@ class _InputDataState extends State<InputData> {
                   textCapitalization: TextCapitalization.words,
                   textInputAction: TextInputAction.next,
                   onChanged: (newName) {
-                    FocusScope.of(context).requestFocus(contextField);
                     udhariData.name = newName;
                     print("Name: $newName");
+                  },
+                  onSubmitted: (_) {
+                    FocusScope.of(context).requestFocus(contextField);
                   },
                   decoration: InputDecoration(
                     labelText: 'Name',
