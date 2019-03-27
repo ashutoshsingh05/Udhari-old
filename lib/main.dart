@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:udhari/borrowScreen.dart';
 import 'package:udhari/lendScreen.dart';
-import 'get_deviceID.dart';
 import 'data_input.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -29,7 +28,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
-  DeviceIDState newDevice = new DeviceIDState();
 
   void _showDataScreen() {
     Navigator.push(
@@ -40,6 +38,18 @@ class _HomePageState extends State<HomePage>
         },
         fullscreenDialog: true,
       ),
+    );
+  }
+
+  void _showToast() {
+    Fluttertoast.showToast(
+      msg: "Sorry! This feature is in development right now 😅",
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.BOTTOM,
+      timeInSecForIos: 1,
+      backgroundColor: Colors.black12,
+      textColor: Colors.black87,
+      fontSize: 16.0,
     );
   }
 
@@ -55,29 +65,11 @@ class _HomePageState extends State<HomePage>
       appBar: AppBar(
         actions: <Widget>[
           IconButton(
-            onPressed: () {
-              Fluttertoast.showToast(
-                msg: "Sorry! This feature is in development right now 😅",
-                toastLength: Toast.LENGTH_SHORT,
-                gravity: ToastGravity.BOTTOM,
-                timeInSecForIos: 1,
-                backgroundColor: Colors.black12,
-                textColor: Colors.black87,
-                fontSize: 16.0);
-            },
+            onPressed: _showToast,
             icon: Icon(Icons.search),
           ),
           IconButton(
-            onPressed: () {
-              Fluttertoast.showToast(
-                msg: "Sorry! This feature is in development right now 😅",
-                toastLength: Toast.LENGTH_SHORT,
-                gravity: ToastGravity.BOTTOM,
-                timeInSecForIos: 1,
-                backgroundColor: Colors.black12,
-                textColor: Colors.black87,
-                fontSize: 16.0);
-            },
+            onPressed: _showToast,
             icon: Icon(Icons.more_vert),
           ),
         ],
@@ -95,16 +87,6 @@ class _HomePageState extends State<HomePage>
           ],
         ),
       ),
-      // body: Center(
-      //   child: Column(
-      //     mainAxisAlignment: MainAxisAlignment.center,
-      //     children: <Widget>[
-      //       Text("Device ID before build: " + newDevice.getDeviceID()),
-      //       DeviceID(),
-      //       Text("Device ID after build: " + newDevice.getDeviceID()),
-      //     ],
-      //   ),
-      // ),
       body: TabBarView(
         controller: _tabController,
         children: <Widget>[

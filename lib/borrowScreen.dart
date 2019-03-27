@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:device_id/device_id.dart';
 
 class Borrow extends StatefulWidget {
   @override
@@ -8,10 +9,24 @@ class Borrow extends StatefulWidget {
 }
 
 class _BorrowState extends State<Borrow> {
-  var myDatabase = Firestore.instance
-      .collection('Users')
-      .document('912bb235e52b3196')
-      .collection('borrow');
+  String _deviceid = 'Unknown';
+
+  @override
+  void initState() {
+    super.initState();
+    initDeviceId();
+  }
+
+  Future<void> initDeviceId() async {
+    String deviceid;
+    deviceid = await DeviceId.getID;
+    if (!mounted) return;
+    setState(
+      () {
+        _deviceid = deviceid;
+      },
+    );
+  }
 
   Widget _borrowCardsBuilder(
       String receipent, String borrowContext, int amount, String dateBorrowed) {
@@ -31,11 +46,11 @@ class _BorrowState extends State<Borrow> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Padding(
-                    padding: EdgeInsets.fromLTRB(0,8,0,1),
+                    padding: EdgeInsets.fromLTRB(0, 8, 0, 1),
                   ),
                   Text("$borrowContext"),
                   Padding(
-                    padding: EdgeInsets.fromLTRB(0,8,0,1),
+                    padding: EdgeInsets.fromLTRB(0, 8, 0, 1),
                   ),
                   Text("$dateBorrowed"),
                 ],
@@ -53,19 +68,26 @@ class _BorrowState extends State<Borrow> {
                   child: const Text("Edit"),
                   onPressed: () {
                     Fluttertoast.showToast(
-                msg: "Sorry! This feature is in development right now 😅",
-                toastLength: Toast.LENGTH_SHORT,
-                gravity: ToastGravity.BOTTOM,
-                timeInSecForIos: 1,
-                backgroundColor: Colors.black12,
-                textColor: Colors.black87,
-                fontSize: 16.0);
+                        msg:
+                            "Sorry! This feature is in development right now 😅",
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.BOTTOM,
+                        timeInSecForIos: 1,
+                        backgroundColor: Colors.black12,
+                        textColor: Colors.black87,
+                        fontSize: 16.0);
                   },
                 ),
                 FlatButton(
-                  child: const Text('Mark as paid'),
+                  child: const Text('Mark as Paid'),
                   onPressed: () {
-                    myDatabase.document('$receipent').delete().then((_) {
+                    Firestore.instance
+                        .collection('Users')
+                        .document(_deviceid)
+                        .collection('borrow')
+                        .document('$receipent')
+                        .delete()
+                        .then((_) {
                       print("Document $receipent has been deleted");
                     });
                   },
@@ -81,7 +103,11 @@ class _BorrowState extends State<Borrow> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-      stream: myDatabase.snapshots(),
+      stream: Firestore.instance
+          .collection('Users')
+          .document(_deviceid)
+          .collection('borrow')
+          .snapshots(),
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) return new Text('${snapshot.error}');
         switch (snapshot.connectionState) {

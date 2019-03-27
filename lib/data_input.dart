@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'Udhari.dart';
 import 'package:intl/intl.dart';
+import 'package:device_id/device_id.dart';
 
 class InputData extends StatefulWidget {
   @override
@@ -8,6 +9,26 @@ class InputData extends StatefulWidget {
 }
 
 class _InputDataState extends State<InputData> {
+
+  String _deviceid = 'Unknown';
+
+  @override
+  void initState() {
+    super.initState();
+    initDeviceId();
+  }
+
+  Future<void> initDeviceId() async {
+    String deviceid;
+    deviceid = await DeviceId.getID;
+    if (!mounted) return;
+    setState(
+      () {
+        _deviceid = deviceid;
+      },
+    );
+  }
+
   FocusNode nameField = FocusNode();
   FocusNode contextField = FocusNode();
   var _radioButtonVal = -1;
@@ -17,6 +38,7 @@ class _InputDataState extends State<InputData> {
 
   @override
   Widget build(BuildContext context) {
+
     Widget radioButtonBuilder(int _setValue, String _label) {
       return Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -153,7 +175,7 @@ class _InputDataState extends State<InputData> {
           udhariData.date = DateFormat('MMMM, d y kk:mm')
               .format(DateTime.now().toLocal())
               .toString();
-          udhariData.pushToFirebase(_radioButtonVal);
+          udhariData.pushToFirebase(_radioButtonVal,_deviceid);
           Navigator.pop(context);
         },
         tooltip: 'Done',

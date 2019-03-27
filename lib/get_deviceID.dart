@@ -8,9 +8,6 @@ class DeviceID extends StatefulWidget {
 }
 
 class DeviceIDState extends State<DeviceID> {
-  String getDeviceID() {
-    return _deviceid;
-  }
 
   String _deviceid = 'Unknown';
 
