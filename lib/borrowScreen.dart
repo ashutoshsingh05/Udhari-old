@@ -43,6 +43,7 @@ class _BorrowState extends State<Borrow> {
             subtitle: Container(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Padding(
@@ -64,20 +65,20 @@ class _BorrowState extends State<Borrow> {
           ButtonTheme.bar(
             child: ButtonBar(
               children: <Widget>[
-                FlatButton(
-                  child: const Text("Edit"),
-                  onPressed: () {
-                    Fluttertoast.showToast(
-                        msg:
-                            "Sorry! This feature is in development right now 😅",
-                        toastLength: Toast.LENGTH_SHORT,
-                        gravity: ToastGravity.BOTTOM,
-                        timeInSecForIos: 1,
-                        backgroundColor: Colors.black12,
-                        textColor: Colors.black87,
-                        fontSize: 16.0);
-                  },
-                ),
+                // FlatButton(
+                //   child: const Text("Edit"),
+                //   onPressed: () {
+                //     Fluttertoast.showToast(
+                //         msg:
+                //             "Sorry! This feature is in development right now 😅",
+                //         toastLength: Toast.LENGTH_SHORT,
+                //         gravity: ToastGravity.BOTTOM,
+                //         timeInSecForIos: 1,
+                //         backgroundColor: Colors.black12,
+                //         textColor: Colors.black87,
+                //         fontSize: 16.0);
+                //   },
+                // ),
                 FlatButton(
                   child: const Text('Mark as Paid'),
                   onPressed: () {
@@ -119,8 +120,13 @@ class _BorrowState extends State<Borrow> {
           case ConnectionState.active:
           case ConnectionState.done:
             if (snapshot.hasError)
-              return Center(child: Text('Error: ${snapshot.error}'));
-            if (!snapshot.hasData) return Text('No data found!');
+              return Center(
+                child: Text('Error: ${snapshot.error}'),
+              );
+            if (!snapshot.hasData)
+              return Center(
+                child: Text('No data found!'),
+              );
             return Container(
               // margin: EdgeInsets.all(20),
               child: SingleChildScrollView(

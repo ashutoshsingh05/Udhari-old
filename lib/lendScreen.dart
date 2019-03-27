@@ -44,6 +44,7 @@ class _LendState extends State<Lend> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   Padding(
                     padding: EdgeInsets.fromLTRB(0, 8, 0, 1),
@@ -64,20 +65,20 @@ class _LendState extends State<Lend> {
           ButtonTheme.bar(
             child: ButtonBar(
               children: <Widget>[
-                FlatButton(
-                  child: const Text("Edit"),
-                  onPressed: () {
-                    Fluttertoast.showToast(
-                        msg:
-                            "Sorry! This feature is in development right now 😅",
-                        toastLength: Toast.LENGTH_SHORT,
-                        gravity: ToastGravity.BOTTOM,
-                        timeInSecForIos: 1,
-                        backgroundColor: Colors.black12,
-                        textColor: Colors.black87,
-                        fontSize: 16.0);
-                  },
-                ),
+                // FlatButton(
+                //   child: const Text("Edit"),
+                //   onPressed: () {
+                //     Fluttertoast.showToast(
+                //         msg:
+                //             "Sorry! This feature is in development right now 😅",
+                //         toastLength: Toast.LENGTH_SHORT,
+                //         gravity: ToastGravity.BOTTOM,
+                //         timeInSecForIos: 1,
+                //         backgroundColor: Colors.black12,
+                //         textColor: Colors.black87,
+                //         fontSize: 16.0);
+                //   },
+                // ),
                 FlatButton(
                   child: const Text('Mark as Received'),
                   onPressed: () {
