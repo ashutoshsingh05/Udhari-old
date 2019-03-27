@@ -8,10 +8,6 @@ class UdhariClass {
   String _context, _name, _date;
   var myDatabase = Firestore.instance;
 
-  void printData() {
-    print("Amount: $_amount \nName: $_name \nContext: $_context\nDate: $_date");
-  }
-
   Future<bool> connected() async {
     var connectivityResult = await (Connectivity().checkConnectivity());
     if (connectivityResult == ConnectivityResult.mobile) {
@@ -46,7 +42,7 @@ class UdhariClass {
     this._date = newDate;
   }
 
-  void pushToFirebase(int _radioButtonVal) {
+  void pushToFirebase(int _radioButtonVal, String _deviceID) {
     var docContext;
     if (_radioButtonVal == 1) {
       docContext = "borrow";
@@ -58,7 +54,7 @@ class UdhariClass {
     }
     myDatabase
         .collection('Users')
-        .document('912bb235e52b3196')
+        .document(_deviceID)
         .collection(docContext)
         .document('${this._name}')
         .setData({

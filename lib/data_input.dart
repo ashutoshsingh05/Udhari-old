@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'Udhari.dart';
 import 'package:intl/intl.dart';
+import 'package:device_id/device_id.dart';
 
 class InputData extends StatefulWidget {
   @override
@@ -8,6 +9,25 @@ class InputData extends StatefulWidget {
 }
 
 class _InputDataState extends State<InputData> {
+  String _deviceid = 'Unknown';
+
+  @override
+  void initState() {
+    super.initState();
+    initDeviceId();
+  }
+
+  Future<void> initDeviceId() async {
+    String deviceid;
+    deviceid = await DeviceId.getID;
+    if (!mounted) return;
+    setState(
+      () {
+        _deviceid = deviceid;
+      },
+    );
+  }
+
   FocusNode nameField = FocusNode();
   FocusNode contextField = FocusNode();
   var _radioButtonVal = -1;
@@ -21,6 +41,7 @@ class _InputDataState extends State<InputData> {
       return Row(
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Radio(
             value: _setValue,
@@ -44,7 +65,7 @@ class _InputDataState extends State<InputData> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Data Input"),
+        title: Text("Enter Udhari Details"),
       ),
       body: Container(
         // decoration: BoxDecoration(
@@ -56,23 +77,24 @@ class _InputDataState extends State<InputData> {
           child: Column(
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                child: Text("Enter Udhari"),
+                padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                child: Text("Select Type of Udhari"),
               ),
               //radio buttons############################################################
               Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      radioButtonBuilder(1, "Borrowed"),
-                      radioButtonBuilder(2, "Lend"),
-                    ],
-                  )),
+                padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    radioButtonBuilder(1, "Borrowed"),
+                    radioButtonBuilder(2, "Lend"),
+                  ],
+                ),
+              ),
               //amount field############################################################
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: TextField(
                   autocorrect: true,
                   autofocus: true,
@@ -98,7 +120,7 @@ class _InputDataState extends State<InputData> {
               ),
               //name field############################################################
               Padding(
-                padding: EdgeInsets.fromLTRB(20, 10, 20, 20),
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: TextField(
                   autocorrect: true,
                   focusNode: nameField,
@@ -123,7 +145,7 @@ class _InputDataState extends State<InputData> {
               ),
               //context field############################################################
               Padding(
-                padding: EdgeInsets.fromLTRB(20, 10, 20, 20),
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: TextField(
                   autocorrect: true,
                   focusNode: contextField,
@@ -153,7 +175,7 @@ class _InputDataState extends State<InputData> {
           udhariData.date = DateFormat('MMMM, d y kk:mm')
               .format(DateTime.now().toLocal())
               .toString();
-          udhariData.pushToFirebase(_radioButtonVal);
+          udhariData.pushToFirebase(_radioButtonVal, _deviceid);
           Navigator.pop(context);
         },
         tooltip: 'Done',

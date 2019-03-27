@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:device_id/device_id.dart';
 
 class Lend extends StatefulWidget {
   @override
@@ -8,10 +9,24 @@ class Lend extends StatefulWidget {
 }
 
 class _LendState extends State<Lend> {
-  var myDatabase = Firestore.instance
-      .collection('Users')
-      .document('912bb235e52b3196')
-      .collection('lend');
+  String _deviceid = 'Unknown';
+
+  @override
+  void initState() {
+    super.initState();
+    initDeviceId();
+  }
+
+  Future<void> initDeviceId() async {
+    String deviceid;
+    deviceid = await DeviceId.getID;
+    if (!mounted) return;
+    setState(
+      () {
+        _deviceid = deviceid;
+      },
+    );
+  }
 
   Widget _lendCardsBuilder(
       String receipent, String lendContext, int amount, String dateLend) {
@@ -29,13 +44,14 @@ class _LendState extends State<Lend> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   Padding(
-                    padding: EdgeInsets.fromLTRB(0,8,0,1),
+                    padding: EdgeInsets.fromLTRB(0, 8, 0, 1),
                   ),
                   Text("$lendContext"),
                   Padding(
-                    padding: EdgeInsets.fromLTRB(0,8,0,1),
+                    padding: EdgeInsets.fromLTRB(0, 8, 0, 1),
                   ),
                   Text("$dateLend"),
                 ],
@@ -49,23 +65,30 @@ class _LendState extends State<Lend> {
           ButtonTheme.bar(
             child: ButtonBar(
               children: <Widget>[
+                // FlatButton(
+                //   child: const Text("Edit"),
+                //   onPressed: () {
+                //     Fluttertoast.showToast(
+                //         msg:
+                //             "Sorry! This feature is in development right now 😅",
+                //         toastLength: Toast.LENGTH_SHORT,
+                //         gravity: ToastGravity.BOTTOM,
+                //         timeInSecForIos: 1,
+                //         backgroundColor: Colors.black12,
+                //         textColor: Colors.black87,
+                //         fontSize: 16.0);
+                //   },
+                // ),
                 FlatButton(
-                  child: const Text("Edit"),
+                  child: const Text('Mark as Received'),
                   onPressed: () {
-                    Fluttertoast.showToast(
-                msg: "Sorry! This feature is in development right now 😅",
-                toastLength: Toast.LENGTH_SHORT,
-                gravity: ToastGravity.BOTTOM,
-                timeInSecForIos: 1,
-                backgroundColor: Colors.black12,
-                textColor: Colors.black87,
-                fontSize: 16.0);
-                  },
-                ),
-                FlatButton(
-                  child: const Text('Mark as paid'),
-                  onPressed: () {
-                    myDatabase.document('$receipent').delete().then((_) {
+                    Firestore.instance
+                        .collection('Users')
+                        .document(_deviceid)
+                        .collection('lend')
+                        .document('$receipent')
+                        .delete()
+                        .then((_) {
                       print("Document $receipent has been deleted");
                     });
                   },
@@ -81,7 +104,11 @@ class _LendState extends State<Lend> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-      stream: myDatabase.snapshots(),
+      stream: Firestore.instance
+          .collection('Users')
+          .document(_deviceid)
+          .collection('lend')
+          .snapshots(),
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.hasError) return new Text('${snapshot.error}');
         switch (snapshot.connectionState) {
