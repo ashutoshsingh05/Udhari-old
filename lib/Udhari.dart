@@ -26,6 +26,9 @@ class UdhariClass {
     _date = _getDate;
   }
 
+  get name => _name;
+  get amount => _amount;
+
   set amount(String newAmount) {
     this._amount = ((int.parse(newAmount)) ?? 0);
   }

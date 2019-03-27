@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'Udhari.dart';
 import 'package:intl/intl.dart';
 import 'package:device_id/device_id.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class InputData extends StatefulWidget {
   @override
@@ -34,6 +35,18 @@ class _InputDataState extends State<InputData> {
   DateTime now;
 
   UdhariClass udhariData = new UdhariClass();
+
+  void _showToast(String _message) {
+    Fluttertoast.showToast(
+      msg: _message,
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.BOTTOM,
+      timeInSecForIos: 1,
+      backgroundColor: Colors.white,
+      textColor: Colors.red,
+      fontSize: 16.0,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -172,11 +185,19 @@ class _InputDataState extends State<InputData> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.done),
         onPressed: () {
-          udhariData.date = DateFormat('MMMM, d y kk:mm')
-              .format(DateTime.now().toLocal())
-              .toString();
-          udhariData.pushToFirebase(_radioButtonVal, _deviceid);
-          Navigator.pop(context);
+          if (_radioButtonVal == -1) {
+            _showToast("Select appropriate Udhari !");
+          } else if (udhariData.amount == null) {
+            _showToast("Amount cannot be empty !");
+          } else if (udhariData.name == null) {
+            _showToast("Name cannot be empty !");
+          } else {
+            udhariData.date = DateFormat('MMMM, d y kk:mm')
+                .format(DateTime.now().toLocal())
+                .toString();
+            udhariData.pushToFirebase(_radioButtonVal, _deviceid);
+            Navigator.pop(context);
+          }
         },
         tooltip: 'Done',
       ),
