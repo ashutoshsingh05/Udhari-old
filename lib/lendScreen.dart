@@ -30,73 +30,86 @@ class _LendState extends State<Lend> {
 
   Widget _lendCardsBuilder(
       String receipent, String lendContext, int amount, String dateLend) {
-    return new Card(
-      child: new Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          ListTile(
-            leading: Icon(
-              Icons.tag_faces,
-              color: Colors.red,
+    return Padding(
+      padding: EdgeInsets.only(top: 2),
+      child: Card(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            ListTile(
+              leading: Icon(
+                Icons.tag_faces,
+                color: Colors.red,
+              ),
+              title: Text(
+                "$receipent",
+                overflow: TextOverflow.ellipsis,
+              ),
+              subtitle: Container(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(0, 8, 0, 1),
+                    ),
+                    Text(
+                      "$lendContext",
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 3,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(0, 8, 0, 1),
+                    ),
+                    Text("$dateLend"),
+                  ],
+                ),
+              ),
+              trailing: SizedBox(
+                child: Text(
+                  '₹$amount',
+                  textScaleFactor: 1.3,
+                ),
+                width: 65,
+              ),
             ),
-            title: Text("$receipent"),
-            subtitle: Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
+            ButtonTheme.bar(
+              child: ButtonBar(
                 children: <Widget>[
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(0, 8, 0, 1),
+                  // FlatButton(
+                  //   child: const Text("Edit"),
+                  //   onPressed: () {
+                  //     Fluttertoast.showToast(
+                  //         msg:
+                  //             "Sorry! This feature is in development right now 😅",
+                  //         toastLength: Toast.LENGTH_SHORT,
+                  //         gravity: ToastGravity.BOTTOM,
+                  //         timeInSecForIos: 1,
+                  //         backgroundColor: Colors.black12,
+                  //         textColor: Colors.black87,
+                  //         fontSize: 16.0);
+                  //   },
+                  // ),
+                  FlatButton(
+                    child: const Text('Mark as Received'),
+                    onPressed: () {
+                      Firestore.instance
+                          .collection('Users')
+                          .document(_deviceid)
+                          .collection('lend')
+                          .document('$receipent')
+                          .delete()
+                          .then((_) {
+                        print("Document $receipent has been deleted");
+                      });
+                    },
                   ),
-                  Text("$lendContext"),
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(0, 8, 0, 1),
-                  ),
-                  Text("$dateLend"),
                 ],
               ),
             ),
-            trailing: SizedBox(
-              child: Text('₹$amount'),
-              width: 50,
-            ),
-          ),
-          ButtonTheme.bar(
-            child: ButtonBar(
-              children: <Widget>[
-                // FlatButton(
-                //   child: const Text("Edit"),
-                //   onPressed: () {
-                //     Fluttertoast.showToast(
-                //         msg:
-                //             "Sorry! This feature is in development right now 😅",
-                //         toastLength: Toast.LENGTH_SHORT,
-                //         gravity: ToastGravity.BOTTOM,
-                //         timeInSecForIos: 1,
-                //         backgroundColor: Colors.black12,
-                //         textColor: Colors.black87,
-                //         fontSize: 16.0);
-                //   },
-                // ),
-                FlatButton(
-                  child: const Text('Mark as Received'),
-                  onPressed: () {
-                    Firestore.instance
-                        .collection('Users')
-                        .document(_deviceid)
-                        .collection('lend')
-                        .document('$receipent')
-                        .delete()
-                        .then((_) {
-                      print("Document $receipent has been deleted");
-                    });
-                  },
-                ),
-              ],
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
