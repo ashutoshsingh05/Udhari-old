@@ -188,7 +188,7 @@ class _InputDataState extends State<InputData> {
           if (_radioButtonVal == -1) {
             _showToast("Select appropriate Udhari !");
           } else if (udhariData.amount == null) {
-            _showToast("Amount cannot be empty !");
+            _showToast("Invalid Amount value !");
           } else if (udhariData.name == null) {
             _showToast("Name cannot be empty !");
           } else {

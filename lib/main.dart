@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:udhari/borrowScreen.dart';
 import 'package:udhari/lendScreen.dart';
 import 'data_input.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+import 'package:udhari/history.dart';
 
 void main() => runApp(TabBarClass());
 
@@ -41,15 +41,15 @@ class _HomePageState extends State<HomePage>
     );
   }
 
-  void _showToast() {
-    Fluttertoast.showToast(
-      msg: "Sorry! This feature is in development right now 😅",
-      toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.BOTTOM,
-      timeInSecForIos: 1,
-      backgroundColor: Colors.black12,
-      textColor: Colors.black87,
-      fontSize: 16.0,
+  void _showHistory() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (BuildContext context) {
+          return History();
+        },
+        fullscreenDialog: true,
+      ),
     );
   }
 
@@ -65,12 +65,11 @@ class _HomePageState extends State<HomePage>
       appBar: AppBar(
         actions: <Widget>[
           IconButton(
-            onPressed: _showToast,
-            icon: Icon(Icons.search),
+            onPressed: _showHistory,
+            icon: Icon(Icons.history),
           ),
-          IconButton(
-            onPressed: _showToast,
-            icon: Icon(Icons.more_vert),
+          SizedBox(
+            width: 10,
           ),
         ],
         leading: Icon(Icons.face),

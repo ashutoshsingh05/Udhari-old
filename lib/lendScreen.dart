@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:device_id/device_id.dart';
 
 class Lend extends StatefulWidget {
@@ -28,8 +27,27 @@ class _LendState extends State<Lend> {
     );
   }
 
-  Widget _lendCardsBuilder(
+  void _saveToHistory(
       String receipent, String lendContext, int amount, String dateLend) {
+    Firestore.instance
+        .collection('Users')
+        .document(_deviceid)
+        .collection('LendHistory')
+        .document('$receipent')
+        .setData({
+      'Name': receipent,
+      'Amount': amount,
+      'Context': lendContext,
+      'Date': dateLend,
+    }).then((_) {
+      print("Data for $receipent Added Successfully to history");
+    }).catchError((_) {
+      print("Errro occured!!");
+    });
+  }
+
+  Widget _lendCardsBuilder(
+      String receipent, String lendContext, int amount, String datelend) {
     return Padding(
       padding: EdgeInsets.only(top: 2),
       child: Card(
@@ -48,8 +66,8 @@ class _LendState extends State<Lend> {
               subtitle: Container(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Padding(
                       padding: EdgeInsets.fromLTRB(0, 8, 0, 1),
@@ -62,7 +80,7 @@ class _LendState extends State<Lend> {
                     Padding(
                       padding: EdgeInsets.fromLTRB(0, 8, 0, 1),
                     ),
-                    Text("$dateLend"),
+                    Text("$datelend"),
                   ],
                 ),
               ),
@@ -77,20 +95,6 @@ class _LendState extends State<Lend> {
             ButtonTheme.bar(
               child: ButtonBar(
                 children: <Widget>[
-                  // FlatButton(
-                  //   child: const Text("Edit"),
-                  //   onPressed: () {
-                  //     Fluttertoast.showToast(
-                  //         msg:
-                  //             "Sorry! This feature is in development right now 😅",
-                  //         toastLength: Toast.LENGTH_SHORT,
-                  //         gravity: ToastGravity.BOTTOM,
-                  //         timeInSecForIos: 1,
-                  //         backgroundColor: Colors.black12,
-                  //         textColor: Colors.black87,
-                  //         fontSize: 16.0);
-                  //   },
-                  // ),
                   FlatButton(
                     child: const Text('Mark as Received'),
                     onPressed: () {
@@ -103,6 +107,7 @@ class _LendState extends State<Lend> {
                           .then((_) {
                         print("Document $receipent has been deleted");
                       });
+                      _saveToHistory(receipent, lendContext, amount, datelend);
                     },
                   ),
                 ],
@@ -133,8 +138,13 @@ class _LendState extends State<Lend> {
           case ConnectionState.active:
           case ConnectionState.done:
             if (snapshot.hasError)
-              return Center(child: Text('Error: ${snapshot.error}'));
-            if (!snapshot.hasData) return Text('No data found!');
+              return Center(
+                child: Text('Error: ${snapshot.error}'),
+              );
+            if (!snapshot.hasData)
+              return Center(
+                child: Text('No data found!'),
+              );
             return Container(
               // margin: EdgeInsets.all(20),
               child: SingleChildScrollView(
