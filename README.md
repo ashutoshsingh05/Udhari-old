@@ -1,4 +1,6 @@
-# Udhari
+
+
+<img src = "img/logo.png" width="500">
 
 The app which you can't buy, because you have to pay your "Udhari" !!
 ____
