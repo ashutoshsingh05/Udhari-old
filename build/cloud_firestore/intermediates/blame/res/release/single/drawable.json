@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/home/ashutosh/Projects/Flutter Apps/Udhari/build/cloud_firestore/intermediates/res/merged/release/drawable/notification_bg.xml",
+        "source": "/home/ashutosh/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/3fba503da262efe60f836875207dd5df/res/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "/home/ashutosh/Projects/Flutter Apps/Udhari/build/cloud_firestore/intermediates/res/merged/release/drawable/notification_tile_bg.xml",
+        "source": "/home/ashutosh/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/3fba503da262efe60f836875207dd5df/res/drawable/notification_tile_bg.xml"
+    },
+    {
+        "merged": "/home/ashutosh/Projects/Flutter Apps/Udhari/build/cloud_firestore/intermediates/res/merged/release/drawable/notification_icon_background.xml",
+        "source": "/home/ashutosh/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/3fba503da262efe60f836875207dd5df/res/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "/home/ashutosh/Projects/Flutter Apps/Udhari/build/cloud_firestore/intermediates/res/merged/release/drawable/notification_bg_low.xml",
+        "source": "/home/ashutosh/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/3fba503da262efe60f836875207dd5df/res/drawable/notification_bg_low.xml"
+    }
+]

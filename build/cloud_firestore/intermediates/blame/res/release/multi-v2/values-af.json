@@ -1,0 +1,82 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/ashutosh/Projects/Flutter Apps/Udhari/build/cloud_firestore/intermediates/incremental/mergeReleaseResources/merged.dir/values-af/values-af.xml",
+            "map": [
+                {
+                    "source": "/home/ashutosh/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/3fba503da262efe60f836875207dd5df/res/values-af/values-af.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "307",
+                        "endColumns": "100",
+                        "endOffsets": "403"
+                    }
+                },
+                {
+                    "source": "/home/ashutosh/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/2565e0089e0af5bd82090f9cc58e2b5c/res/values-af/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "201",
+                        "endOffsets": "448"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "105",
+                        "endColumns": "201",
+                        "endOffsets": "302"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/ashutosh/Projects/Flutter Apps/Udhari/build/cloud_firestore/intermediates/res/merged/release/values-af/values-af.xml",
+            "map": [
+                {
+                    "source": "/home/ashutosh/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/3fba503da262efe60f836875207dd5df/res/values-af/values-af.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "307",
+                        "endColumns": "100",
+                        "endOffsets": "403"
+                    }
+                },
+                {
+                    "source": "/home/ashutosh/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/2565e0089e0af5bd82090f9cc58e2b5c/res/values-af/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "201",
+                        "endOffsets": "448"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "105",
+                        "endColumns": "201",
+                        "endOffsets": "302"
+                    }
+                }
+            ]
+        }
+    ]
+}
